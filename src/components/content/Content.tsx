@@ -11,12 +11,12 @@ const Content: React.FC<IProps> = (props) => {
         (state) => state.weatherReducer.requestData.status
     );
     return (
-        <div>
+        <>
             <div className={status === 'fulfilled' ? classes.wrapper : ''}>
                 <CitySearchForm />
                 {status === 'fulfilled' && <CurrentWeatherContent />}
             </div>
-        </div>
+        </>
     );
 };
 export default Content;

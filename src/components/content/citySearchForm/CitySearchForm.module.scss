@@ -5,6 +5,13 @@
     position: relative;
 }
 
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .input {
     padding: 3px 0;
     color: white;
@@ -18,11 +25,17 @@
     border-bottom: 2px solid white;
     box-shadow: 0px 8px 10px -10px white;
     transition: width 0.3s, border-bottom 2s, box-shadow 1s;
+    @media screen and (max-width: 750px) {
+        font-size: 25px;
+    }
 }
 
 .inputOnFocus {
     width: 697px;
     transition: width 0.5s;
+    @media screen and (max-width: 750px) {
+        width: 95vw;
+    }
 }
 
 .inputOnError {

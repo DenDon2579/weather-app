@@ -1,4 +1,10 @@
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import React, {
+    ChangeEvent,
+    FormEvent,
+    useEffect,
+    useRef,
+    useState,
+} from 'react';
 import { fetchCurrentWeather } from '../../../data/reducers/weatherReducer';
 
 import {
@@ -10,6 +16,7 @@ import classes from './CitySearchForm.module.scss';
 const CitySearchForm: React.FC = () => {
     const [value, setValue] = useState<string>('');
     const [errorCityValue, setErrorCityValue] = useState<string>('');
+    const input = useRef<HTMLInputElement>(null);
     const [inputClasses, setInputClasses] = useState<string[]>([classes.input]);
     const request = useAppSelector((state) => state.weatherReducer.requestData);
     const dispatch = useAppDispatch();
@@ -56,6 +63,9 @@ const CitySearchForm: React.FC = () => {
                 classes.inputOnFocus,
                 classes.inputOnDone,
             ]);
+            if (input.current) {
+                input.current.blur();
+            }
         }
     }, [request.status, request.error]);
 
@@ -63,6 +73,7 @@ const CitySearchForm: React.FC = () => {
         <div className={classes.wrapper}>
             <form onSubmit={formSubmitHandler} className={classes.form}>
                 <input
+                    ref={input}
                     onFocus={inputFocusHandler}
                     onBlur={inputBlurHandler}
                     onChange={inputChangeHandler}

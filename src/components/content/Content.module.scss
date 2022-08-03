@@ -9,6 +9,10 @@
     animation: in 0.5s;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 750px) {
+        width: 85vw;
+        height: 500px;
+    }
 }
 
 @keyframes in {
