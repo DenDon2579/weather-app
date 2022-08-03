@@ -1,0 +1,28 @@
+.wrapper {
+    width: 90%;
+    height: 16%;
+    border: 2px white solid;
+    border-radius: 20px;
+    display: flex;
+}
+
+.markTitle {
+    width: 60%;
+    height: 100%;
+    border-right: 2px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.markValue {
+    width: 40%;
+    height: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}

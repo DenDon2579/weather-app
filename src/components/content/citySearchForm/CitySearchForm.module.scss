@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.input {
+    padding: 3px 0;
+    color: white;
+    max-width: 700px;
+    width: 200px;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 2px solid white;
+    box-shadow: 0px 8px 10px -10px white;
+    transition: width 0.3s, border-bottom 2s, box-shadow 1s;
+}
+
+.inputOnFocus {
+    width: 697px;
+    transition: width 0.5s;
+}
+
+.inputOnError {
+    border-bottom: 2px solid rgb(235, 80, 80);
+    box-shadow: 0px 8px 10px -10px rgb(235, 80, 80);
+}
+
+.inputOnPending {
+    border-bottom: 2px solid rgb(235, 186, 80);
+    box-shadow: 0px 8px 10px -10px rgb(235, 186, 80);
+}
+
+.error {
+    font-size: 20px;
+    color: rgb(235, 80, 80);
+    position: absolute;
+    bottom: -30px;
+    animation: errorIn 1s;
+}
+
+@keyframes errorIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
